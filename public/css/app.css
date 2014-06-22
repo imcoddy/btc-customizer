@@ -28,3 +28,11 @@
   content: "";
   padding: 0;
 }
+
+.token-design {
+  background-color: #eee;
+  height: 442px;
+  width: 240px;
+  border-radius: 112px;
+  padding-top: 120px;
+}
