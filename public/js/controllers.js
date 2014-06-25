@@ -4,23 +4,26 @@
 
 angular.module('myApp.controllers', []).
   controller('AppCtrl', function ($scope, socket) {
-    socket.on('send:name', function (data) {
-      $scope.name = data.name;
-    });
   }).
-  controller('MyCtrl1', function ($scope, $sce, socket) {
-    socket.on('send:time', function (data) {
-      $scope.time = data.time;
-    });
+  controller('DesignCtrl', function ($scope, $sce, socket) {
+    $scope.updateQRCode = function() {
+        var qrCode = qrcode(3, 'M');
+        var text = $scope.qrCodeText;
+        text = typeof text === 'undefined' ? '' : text;
+        qrCode.addData(text);
+        qrCode.make();
+        var qrCodeImg = qrCode.createTableTag(4, 0);
+        $scope.qrCodeImg = $sce.trustAsHtml(qrCodeImg);
+    }
 
-    var qrCode = qrcode(3, 'M');
-    var text = 'test'; //TODO replace dynamicly later
-    text = text.replace(/^[\s\u3000]+|[\s\u3000]+$/g, '');
-    qrCode.addData(text);
-    qrCode.make();
-    var qrCodeImg = qrCode.createImgTag(4);
-    $scope.qrCodeImg = $sce.trustAsHtml(qrCodeImg);
+    $scope.backTextA = 'Text A';
+    $scope.backTextB = 'Text B';
+    $scope.backTextC = 'Text C';
+    $scope.qrCodeText = 'QRCode Text';
+    $scope.updateQRCode();
   }).
-    controller('MyCtrl2', function ($scope) {
+    controller('AboutCtrl', function ($scope) {
     // write Ctrl here
   });
+
+

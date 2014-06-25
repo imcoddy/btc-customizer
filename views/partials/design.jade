@@ -1,8 +1,21 @@
-.col-xs-12.col-sm-122.col-md-12
-  #back-design.token-design
-    #back-text-a.text-center
-      p test
-    #back-qr-code.text-center
-      p(ng-bind-html='qrCodeImg') {{ qrCodeImg }}
-    #back-text-b.text-center
-      p test
+.row
+  .col-xs-12.col-sm-122.col-md-12
+    .col-md-6.col-md-offset-4
+      #back-design.token-design
+        .text-center.token-hole
+          h1 〇
+        #back-text-a.text-center
+          p {{backTextA}}
+        #back-qr-code.text-center
+          p(ng-bind-html='qrCodeImg') {{ qrCodeImg }}
+        #back-text-b.text-center
+          p {{backTextB}}
+        #back-text-c.text-center
+          p {{backTextC}}
+
+
+  .row
+    input(ng-model="backTextA")
+    input(ng-model="qrCodeText", ng-change="updateQRCode()")
+    input(ng-model="backTextB")
+    input(ng-model="backTextC")
