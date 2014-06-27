@@ -15,24 +15,23 @@
 
 .col-xs-12.col-sm-122.col-md-12
   form(role="form")
-    .form-group
-      label(for="backTextA") A 区定制字符(要求长度在10~30之间的英文或数字)
-      input.form-control(ng-model="backTextA", id="backTextA")
+    fieldset
+      legend 定制区
+      .form-group
+        label(for="backTextA") A 区定制字符(要求长度在10~30之间的英文或数字)
+        input.form-control(ng-model="backTextA", id="backTextA")
 
-  form(role="form")
-    .form-group
-      label(for="qrCodeText") QR 私钥定制区(要求长度在250字符内)
-      input.form-control(ng-model="qrCodeText", id="qrCodeText", ng-change="updateQRCode()")
+      .form-group
+        label(for="qrCodeText") QR 私钥定制区(要求长度在250字符内)
+        textarea.form-control(ng-model="qrCodeText", id="qrCodeText", ng-change="updateQRCode()")
 
-  form(role="form")
-    .form-group
-      label(for="backTextB") B 区定制字符(要求长度在10~30之间的英文或数字)
-      input.form-control(ng-model="backTextB", id="backTextB")
+      .form-group
+        label(for="backTextB") B 区定制字符(要求长度在10~30之间的英文或数字)
+        input.form-control(ng-model="backTextB", id="backTextB")
 
-  form(role="form")
-    .form-group
-      label(for="backTextC") C 区定制字符(要求长度在4~8之间的英文或数字)
-      input.form-control(ng-model="backTextC", id="backTextC")
+      .form-group
+        label(for="backTextC") C 区定制字符(要求长度在4~8之间的英文或数字)
+        input.form-control(ng-model="backTextC", id="backTextC")
 
 .col-xs-12.col-sm-122.col-md-12
   h3 输出结果
