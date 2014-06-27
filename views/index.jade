@@ -2,12 +2,16 @@ extends layout
 
 block body
   div(ng-controller='AppCtrl').container
-    h2 钨金比特币吊牌定制页面
-    ul.menu
-      li
-        a(href='design') Design
-      li
-        a(href='about') About
+    nav.navbar.navbar-default.navbar-fixed-top(role="navigation")
+      div.container
+        a.navbar-brand(href="#")钨金比特币吊牌
+        ul.nav.navbar-nav
+          li
+            a(href='design') Design
+          li
+            a(href='gallery') Gallery
+          li
+            a(href='about') About
 
     div(ng-view)
 

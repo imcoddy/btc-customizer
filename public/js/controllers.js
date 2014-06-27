@@ -7,7 +7,7 @@ angular.module('myApp.controllers', []).
   }).
   controller('DesignCtrl', function ($scope, $sce, socket) {
     $scope.updateQRCode = function() {
-        var qrCode = qrcode(3, 'M');
+        var qrCode = qrcode(8, 'M');
         var text = $scope.qrCodeText;
         text = typeof text === 'undefined' ? '' : text;
         qrCode.addData(text);
@@ -16,9 +16,9 @@ angular.module('myApp.controllers', []).
         $scope.qrCodeImg = $sce.trustAsHtml(qrCodeImg);
     }
 
-    $scope.backTextA = 'Text A';
-    $scope.backTextB = 'Text B';
-    $scope.backTextC = 'Text C';
+    $scope.backTextA = 'Bitcoin private key';
+    $scope.backTextB = 'In Cryptography We Trust';
+    $scope.backTextC = '2014';
     $scope.qrCodeText = 'QRCode Text';
     $scope.updateQRCode();
   }).
