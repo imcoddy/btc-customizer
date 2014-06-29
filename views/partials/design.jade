@@ -12,7 +12,6 @@
       #back-text-c.text-center
         p {{backTextC}}
 
-
 .col-xs-12.col-sm-12.col-md-12
   form(role="form")
     fieldset
@@ -72,19 +71,28 @@
       .form-group
         label.col-lg-2(for="infoPhone") 联系电话
         .col-lg-10.controls
-          input.form-control(ng-model="infoPhone", id="infoPhone", placeholder="手机号码快递联系用")
+          input.form-control(ng-model="infoPhone", id="infoPhone", type="tel", placeholder="手机号码快递联系用")
 
       .form-group
-        label.col-lg-2(for="infoComment") 补充说明
+        label.col-lg-2(for="infoComment") 订制说明
         .col-lg-10.controls
           textarea.form-control(ng-model="infoComment", id="infoComment", placeholder="如果有需要补充的说明内容请在此输入。")
 
 .col-xs-12.col-sm-12.col-md-12
   legend 输出结果
+  p 以下结果确认无误后复制发给琪琪。因暂不支持多块分别定制，如果需要一次定制多块不同的话请自行按下列定制信息整理。
   .well
     h4 订购信息
+    p QQ: {{ infoQQ }}
+    p 数量: {{ infoNum }}
+    p 金额: {{ infoPrice }} mBTC
+    p 交易ID: {{ infoTransactionID }}
+    p 收件人: {{ infoContact }}
+    p 收件地址: {{ infoPostAddress }}
+    p 收件人电话: {{ infoPhone }}
+    p 订制说明: {{ infoComment }}
     h4 定制信息
+    p QR码私钥定制字符: {{ qrCodeText }}
     p A 区定制字符: {{ backTextA }}
-    p QR码定制字符: {{ qrCodeText }}
     p B 区定制字符: {{ backTextB }}
     p C 区定制字符: {{ backTextC }}
