@@ -1,4 +1,4 @@
-.col-xs-12.col-sm-122.col-md-12
+.col-xs-12.col-sm-12.col-md-12
   .col-md-6.col-md-offset-4
     #back-design.token-design
       .text-center.token-hole
@@ -13,29 +13,77 @@
         p {{backTextC}}
 
 
-.col-xs-12.col-sm-122.col-md-12
+.col-xs-12.col-sm-12.col-md-12
   form(role="form")
     fieldset
       legend 定制区
       .form-group
-        label(for="backTextA") A 区定制字符(要求长度在10~30之间的英文或数字)
-        input.form-control(ng-model="backTextA", id="backTextA")
+        label.col-lg-2(for="backTextA") A 区定制字符(要求长度在10~30之间的英文或数字)
+        .col-lg-10.controls
+          input.form-control(ng-model="backTextA", id="backTextA")
 
       .form-group
-        label(for="qrCodeText") QR 私钥定制区(要求长度在250字符内)
-        textarea.form-control(ng-model="qrCodeText", id="qrCodeText", ng-change="updateQRCode()")
+        label.col-lg-2(for="qrCodeText") QR 私钥定制区(要求长度在250字符内)
+        .col-lg-10.controls
+          textarea.form-control(ng-model="qrCodeText", id="qrCodeText", ng-change="updateQRCode()")
 
       .form-group
-        label(for="backTextB") B 区定制字符(要求长度在10~30之间的英文或数字)
-        input.form-control(ng-model="backTextB", id="backTextB")
+        label.col-lg-2(for="backTextB") B 区定制字符(要求长度在10~30之间的英文或数字)
+        .col-lg-10.controls
+          input.form-control(ng-model="backTextB", id="backTextB")
 
       .form-group
-        label(for="backTextC") C 区定制字符(要求长度在4~8之间的英文或数字)
-        input.form-control(ng-model="backTextC", id="backTextC")
+        label.col-lg-2(for="backTextC") C 区定制字符(要求长度在4~8之间的英文或数字)
+        .col-lg-10.controls
+          input.form-control(ng-model="backTextC", id="backTextC")
 
-.col-xs-12.col-sm-122.col-md-12
-  h3 输出结果
+      legend 个人信息录入区
+      .form-group
+        label.col-lg-2(for="infoContact") 收件人
+        .col-lg-10.controls
+          input.form-control(ng-model="infoContact", id="infoContact")
+
+      .form-group
+        label.col-lg-2(for="infoQQ") QQ 号码
+        .col-lg-10.controls
+          input.form-control(ng-model="infoQQ", id="infoQQ")
+
+      .form-group
+        label.col-lg-2(for="infoNum") 订购数量
+        .col-lg-10.controls
+          .row
+            .col-xs-9
+              input.form-control(ng-model="infoNum", id="infoNum", type="number", min="1", ng-change="updatePrice()")
+            .col-xs-3
+              span.input-group
+                span.input-group-addon mBTC
+                input.form-control(placeholder="0.00", readonly="readonly", type="text", ng-model="infoPrice")
+
+      .form-group
+        label.col-lg-2(for="infoTransactionID") 交易 ID
+        .col-lg-10.controls
+          input.form-control(ng-model="infoTransactionID", id="infoTransactionID", placeholder="支付的交易 ID")
+
+      .form-group
+        label.col-lg-2(for="infoPostAddress") 邮编地址
+        .col-lg-10.controls
+          input.form-control(ng-model="infoPostAddress", id="infoPostAddress", placeholder="xx 市 xxx 街 xxx 号 邮编 xxxxxx")
+
+      .form-group
+        label.col-lg-2(for="infoPhone") 联系电话
+        .col-lg-10.controls
+          input.form-control(ng-model="infoPhone", id="infoPhone", placeholder="手机号码快递联系用")
+
+      .form-group
+        label.col-lg-2(for="infoComment") 补充说明
+        .col-lg-10.controls
+          textarea.form-control(ng-model="infoComment", id="infoComment", placeholder="如果有需要补充的说明内容请在此输入。")
+
+.col-xs-12.col-sm-12.col-md-12
+  legend 输出结果
   .well
+    h4 订购信息
+    h4 定制信息
     p A 区定制字符: {{ backTextA }}
     p QR码定制字符: {{ qrCodeText }}
     p B 区定制字符: {{ backTextB }}
