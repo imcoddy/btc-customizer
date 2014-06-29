@@ -17,24 +17,24 @@
     fieldset
       legend 定制区
       .form-group
-        label.col-lg-2(for="backTextA") A 区定制字符(要求长度在10~30之间的英文或数字)
+        label.col-lg-2(for="backTextA") A 区定制字符
         .col-lg-10.controls
-          input.form-control(ng-model="backTextA", id="backTextA", placeholder="A 区定制字符，例如 I love bitcoin")
+          input.form-control(ng-model="backTextA", id="backTextA", placeholder="A 区定制字符(要求长度在10~30之间的英文或数字)")
 
       .form-group
-        label.col-lg-2(for="qrCodeText") QR 加密私钥定制区(要求长度在250字符内，切记不要使用未加密的私钥！)
+        label.col-lg-2(for="qrCodeText") QR 加密私钥定制区
         .col-lg-10.controls
           textarea.form-control(ng-model="qrCodeText", id="qrCodeText", ng-change="updateQRCode()", placeholder="QR 加密私钥定制区(要求长度在250字符内，切记不要使用未加密的私钥！)")
 
       .form-group
-        label.col-lg-2(for="backTextB") B 区定制字符(要求长度在10~30之间的英文或数字)
+        label.col-lg-2(for="backTextB") B 区定制字符
         .col-lg-10.controls
-          input.form-control(ng-model="backTextB", id="backTextB", placeholder="B 区定制字符，例如 no zuo no die")
+          input.form-control(ng-model="backTextB", id="backTextB", placeholder="B 区定制字符(要求长度在10~30之间的英文或数字)")
 
       .form-group
-        label.col-lg-2(for="backTextC") C 区定制字符(要求长度在4~8之间的英文或数字)
+        label.col-lg-2(for="backTextC") C 区定制字符
         .col-lg-10.controls
-          input.form-control(ng-model="backTextC", id="backTextC", placeholder="C 区定制字符，例如 2014")
+          input.form-control(ng-model="backTextC", id="backTextC", placeholder="C 区定制字符(要求长度在4~8之间的英文或数字)")
 
       legend 个人信息录入区
       .form-group
