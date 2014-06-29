@@ -20,33 +20,33 @@
       .form-group
         label.col-lg-2(for="backTextA") A 区定制字符(要求长度在10~30之间的英文或数字)
         .col-lg-10.controls
-          input.form-control(ng-model="backTextA", id="backTextA")
+          input.form-control(ng-model="backTextA", id="backTextA", placeholder="A 区定制字符，例如 I love bitcoin")
 
       .form-group
-        label.col-lg-2(for="qrCodeText") QR 私钥定制区(要求长度在250字符内)
+        label.col-lg-2(for="qrCodeText") QR 加密私钥定制区(要求长度在250字符内，切记不要使用未加密的私钥！)
         .col-lg-10.controls
-          textarea.form-control(ng-model="qrCodeText", id="qrCodeText", ng-change="updateQRCode()")
+          textarea.form-control(ng-model="qrCodeText", id="qrCodeText", ng-change="updateQRCode()", placeholder="QR 加密私钥定制区(要求长度在250字符内，切记不要使用未加密的私钥！)")
 
       .form-group
         label.col-lg-2(for="backTextB") B 区定制字符(要求长度在10~30之间的英文或数字)
         .col-lg-10.controls
-          input.form-control(ng-model="backTextB", id="backTextB")
+          input.form-control(ng-model="backTextB", id="backTextB", placeholder="B 区定制字符，例如 no zuo no die")
 
       .form-group
         label.col-lg-2(for="backTextC") C 区定制字符(要求长度在4~8之间的英文或数字)
         .col-lg-10.controls
-          input.form-control(ng-model="backTextC", id="backTextC")
+          input.form-control(ng-model="backTextC", id="backTextC", placeholder="C 区定制字符，例如 2014")
 
       legend 个人信息录入区
       .form-group
         label.col-lg-2(for="infoContact") 收件人
         .col-lg-10.controls
-          input.form-control(ng-model="infoContact", id="infoContact")
+          input.form-control(ng-model="infoContact", id="infoContact", placeholder="收件人姓名")
 
       .form-group
         label.col-lg-2(for="infoQQ") QQ 号码
         .col-lg-10.controls
-          input.form-control(ng-model="infoQQ", id="infoQQ")
+          input.form-control(ng-model="infoQQ", id="infoQQ", placeholder="确认沟通用")
 
       .form-group
         label.col-lg-2(for="infoNum") 订购数量

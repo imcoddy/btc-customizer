@@ -29,8 +29,17 @@ angular.module('myApp.controllers', []).
     $scope.infoPrice = $scope.updatePrice();
     $scope.updateQRCode();
   }).
-    controller('AboutCtrl', function ($scope) {
-    // write Ctrl here
+  controller('AboutCtrl', function ($scope, $sce) {
+    $scope.getDonateQRCode = function() {
+      var qrCode = qrcode(8, 'M');
+      var text = '1MCoddyA6qWitWEq33GUXLnK5aH1APPPAf';
+      qrCode.addData(text);
+      qrCode.make();
+      var qrCodeImg = qrCode.createTableTag(4, 0);
+      return $sce.trustAsHtml(qrCodeImg);
+    };
+    $scope.donateQRCode = $scope.getDonateQRCode();
+    console.log($scope.donateQRCode );
   });
 
 
