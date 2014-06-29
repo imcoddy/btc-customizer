@@ -1,8 +1,98 @@
-.col-xs-12.col-sm-122.col-md-12
-  #back-design.token-design
-    #back-text-a.text-center
-      p test
-    #back-qr-code.text-center
-      p qr-code
-    #back-text-b.text-center
-      p test
+.col-xs-12.col-sm-12.col-md-12
+  .col-md-6.col-md-offset-4
+    #back-design.token-design
+      .text-center.token-hole
+        h1 〇
+      #back-text-a.text-center
+        p {{backTextA}}
+      #back-qr-code.text-center
+        p(ng-bind-html='qrCodeImg') {{ qrCodeImg }}
+      #back-text-b.text-center
+        p {{backTextB}}
+      #back-text-c.text-center
+        p {{backTextC}}
+
+.col-xs-12.col-sm-12.col-md-12
+  form(role="form")
+    fieldset
+      legend 定制区
+      .form-group
+        label.col-lg-2(for="backTextA") A 区定制字符(要求长度在10~30之间的英文或数字)
+        .col-lg-10.controls
+          input.form-control(ng-model="backTextA", id="backTextA", placeholder="A 区定制字符，例如 I love bitcoin")
+
+      .form-group
+        label.col-lg-2(for="qrCodeText") QR 加密私钥定制区(要求长度在250字符内，切记不要使用未加密的私钥！)
+        .col-lg-10.controls
+          textarea.form-control(ng-model="qrCodeText", id="qrCodeText", ng-change="updateQRCode()", placeholder="QR 加密私钥定制区(要求长度在250字符内，切记不要使用未加密的私钥！)")
+
+      .form-group
+        label.col-lg-2(for="backTextB") B 区定制字符(要求长度在10~30之间的英文或数字)
+        .col-lg-10.controls
+          input.form-control(ng-model="backTextB", id="backTextB", placeholder="B 区定制字符，例如 no zuo no die")
+
+      .form-group
+        label.col-lg-2(for="backTextC") C 区定制字符(要求长度在4~8之间的英文或数字)
+        .col-lg-10.controls
+          input.form-control(ng-model="backTextC", id="backTextC", placeholder="C 区定制字符，例如 2014")
+
+      legend 个人信息录入区
+      .form-group
+        label.col-lg-2(for="infoContact") 收件人
+        .col-lg-10.controls
+          input.form-control(ng-model="infoContact", id="infoContact", placeholder="收件人姓名")
+
+      .form-group
+        label.col-lg-2(for="infoQQ") QQ 号码
+        .col-lg-10.controls
+          input.form-control(ng-model="infoQQ", id="infoQQ", placeholder="确认沟通用")
+
+      .form-group
+        label.col-lg-2(for="infoNum") 订购数量
+        .col-lg-10.controls
+          .row
+            .col-xs-9
+              input.form-control(ng-model="infoNum", id="infoNum", type="number", min="1", ng-change="updatePrice()")
+            .col-xs-3
+              span.input-group
+                span.input-group-addon mBTC
+                input.form-control(placeholder="0.00", readonly="readonly", type="text", ng-model="infoPrice")
+
+      .form-group
+        label.col-lg-2(for="infoTransactionID") 交易 ID
+        .col-lg-10.controls
+          input.form-control(ng-model="infoTransactionID", id="infoTransactionID", placeholder="支付的交易 ID")
+
+      .form-group
+        label.col-lg-2(for="infoPostAddress") 邮编地址
+        .col-lg-10.controls
+          input.form-control(ng-model="infoPostAddress", id="infoPostAddress", placeholder="xx 市 xxx 街 xxx 号 邮编 xxxxxx")
+
+      .form-group
+        label.col-lg-2(for="infoPhone") 联系电话
+        .col-lg-10.controls
+          input.form-control(ng-model="infoPhone", id="infoPhone", type="tel", placeholder="手机号码快递联系用")
+
+      .form-group
+        label.col-lg-2(for="infoComment") 订制说明
+        .col-lg-10.controls
+          textarea.form-control(ng-model="infoComment", id="infoComment", placeholder="如果有需要补充的说明内容请在此输入。")
+
+.col-xs-12.col-sm-12.col-md-12
+  legend 输出结果
+  p 以下结果确认无误后复制发给琪琪。因暂不支持多块分别定制，如果需要一次定制多块不同的话请自行按下列定制信息整理。
+  .well
+    h4 订购信息
+    p QQ: {{ infoQQ }}
+    p 数量: {{ infoNum }}
+    p 金额: {{ infoPrice }} mBTC
+    p 交易ID: {{ infoTransactionID }}
+    p 收件人: {{ infoContact }}
+    p 收件地址: {{ infoPostAddress }}
+    p 收件人电话: {{ infoPhone }}
+    p 订制说明: {{ infoComment }}
+    h4 定制信息
+    p QR码私钥定制字符: {{ qrCodeText }}
+    p A 区定制字符: {{ backTextA }}
+    p B 区定制字符: {{ backTextB }}
+    p C 区定制字符: {{ backTextC }}

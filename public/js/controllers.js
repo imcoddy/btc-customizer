@@ -4,15 +4,42 @@
 
 angular.module('myApp.controllers', []).
   controller('AppCtrl', function ($scope, socket) {
-    socket.on('send:name', function (data) {
-      $scope.name = data.name;
-    });
   }).
-  controller('MyCtrl1', function ($scope, socket) {
-    socket.on('send:time', function (data) {
-      $scope.time = data.time;
-    });
+  controller('DesignCtrl', function ($scope, $sce, socket) {
+    $scope.updateQRCode = function() {
+      var qrCode = qrcode(8, 'M');
+      var text = $scope.qrCodeText;
+      text = typeof text === 'undefined' ? '' : text;
+      qrCode.addData(text);
+      qrCode.make();
+      var qrCodeImg = qrCode.createTableTag(4, 0);
+      $scope.qrCodeImg = $sce.trustAsHtml(qrCodeImg);
+    };
+
+    $scope.updatePrice = function() {
+      $scope.infoPrice = $scope.infoNum * 60;
+      return $scope.infoPrice;
+    };
+
+    $scope.backTextA = 'Bitcoin private key';
+    $scope.backTextB = 'In Cryptography We Trust';
+    $scope.backTextC = '2014';
+    $scope.qrCodeText = 'QRCode Text';
+    $scope.infoNum = 1;
+    $scope.infoPrice = $scope.updatePrice();
+    $scope.updateQRCode();
   }).
-  controller('MyCtrl2', function ($scope) {
-    // write Ctrl here
+  controller('AboutCtrl', function ($scope, $sce) {
+    $scope.getDonateQRCode = function() {
+      var qrCode = qrcode(8, 'M');
+      var text = '1MCoddyA6qWitWEq33GUXLnK5aH1APPPAf';
+      qrCode.addData(text);
+      qrCode.make();
+      var qrCodeImg = qrCode.createTableTag(4, 0);
+      return $sce.trustAsHtml(qrCodeImg);
+    };
+    $scope.donateQRCode = $scope.getDonateQRCode();
+    console.log($scope.donateQRCode );
   });
+
+
