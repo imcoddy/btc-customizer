@@ -16,38 +16,38 @@
   form(role="form")
     fieldset
       legend 定制区
-      .form-group
+      .form-group.row
         label.col-lg-2(for="backTextA") A 区定制字符
         .col-lg-10.controls
           input.form-control(ng-model="backTextA", id="backTextA", placeholder="A 区定制字符(要求长度在10~30之间的英文或数字)")
 
-      .form-group
+      .form-group.row
         label.col-lg-2(for="qrCodeText") QR 加密私钥定制区
         .col-lg-10.controls
           textarea.form-control(ng-model="qrCodeText", id="qrCodeText", ng-change="updateQRCode()", placeholder="QR 加密私钥定制区(要求长度在250字符内，切记不要使用未加密的私钥！)")
 
-      .form-group
+      .form-group.row
         label.col-lg-2(for="backTextB") B 区定制字符
         .col-lg-10.controls
           input.form-control(ng-model="backTextB", id="backTextB", placeholder="B 区定制字符(要求长度在10~30之间的英文或数字)")
 
-      .form-group
+      .form-group.row
         label.col-lg-2(for="backTextC") C 区定制字符
         .col-lg-10.controls
           input.form-control(ng-model="backTextC", id="backTextC", placeholder="C 区定制字符(要求长度在4~8之间的英文或数字)")
 
       legend 个人信息录入区
-      .form-group
+      .form-group.row
         label.col-lg-2(for="infoContact") 收件人
         .col-lg-10.controls
           input.form-control(ng-model="infoContact", id="infoContact", placeholder="收件人姓名")
 
-      .form-group
+      .form-group.row
         label.col-lg-2(for="infoQQ") QQ 号码
         .col-lg-10.controls
           input.form-control(ng-model="infoQQ", id="infoQQ", placeholder="确认沟通用")
 
-      .form-group
+      .form-group.row
         label.col-lg-2(for="infoNum") 订购数量
         .col-lg-10.controls
           .row
@@ -58,22 +58,22 @@
                 span.input-group-addon mBTC
                 input.form-control(placeholder="0.00", readonly="readonly", type="text", ng-model="infoPrice")
 
-      .form-group
+      .form-group.row
         label.col-lg-2(for="infoTransactionID") 交易 ID
         .col-lg-10.controls
           input.form-control(ng-model="infoTransactionID", id="infoTransactionID", placeholder="支付的交易 ID")
 
-      .form-group
+      .form-group.row
         label.col-lg-2(for="infoPostAddress") 邮编地址
         .col-lg-10.controls
           input.form-control(ng-model="infoPostAddress", id="infoPostAddress", placeholder="xx 市 xxx 街 xxx 号 邮编 xxxxxx")
 
-      .form-group
+      .form-group.row
         label.col-lg-2(for="infoPhone") 联系电话
         .col-lg-10.controls
           input.form-control(ng-model="infoPhone", id="infoPhone", type="tel", placeholder="手机号码快递联系用")
 
-      .form-group
+      .form-group.row
         label.col-lg-2(for="infoComment") 订制说明
         .col-lg-10.controls
           textarea.form-control(ng-model="infoComment", id="infoComment", placeholder="如果有需要补充的说明内容请在此输入。")
