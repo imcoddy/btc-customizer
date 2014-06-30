@@ -1,17 +1,26 @@
 .col-xs-12.col-sm-12.col-md-12
-  .col-md-6.col-md-offset-4
-    #back-design.token-design
-      .text-center.token-hole
-        h1 〇
-      #back-text-a.text-center
-        p {{backTextA}}
-      #back-qr-code.text-center
-        p(ng-bind-html='qrCodeImg') {{ qrCodeImg }}
-      #back-text-b.text-center
-        p {{backTextB}}
-      #back-text-c.text-center
-        p {{backTextC}}
-
+  .row
+    .col-md-3.col-md-offset-1.col-sm-6
+      #back-design.token-design
+        .text-center.token-hole
+          h1 〇
+        #back-text-a.text-center
+          p {{backTextA}}
+        #back-qr-code.text-center
+          p(ng-bind-html='qrCodeImg') {{ qrCodeImg }}
+        #back-text-b.text-center
+          p {{backTextB}}
+        #back-text-c.text-center
+          p {{backTextC}}
+    .col-md-3.col-md-offset-2.col-sm-6
+      #back-design.token-design
+        .text-center.token-hole
+          h1 〇
+        #front-image.text-center
+          img(src='image/bitcoin.png')
+        #front-text.text-center
+          p Bitcoin
+ 
 .col-xs-12.col-sm-12.col-md-12
   form(role="form")
     fieldset
@@ -24,7 +33,7 @@
       .form-group.row
         label.col-lg-2(for="qrCodeText") QR 加密私钥定制区
         .col-lg-10.controls
-          textarea.form-control(ng-model="qrCodeText", id="qrCodeText", ng-change="updateQRCode()", placeholder="QR 加密私钥定制区(要求长度在250字符内，切记不要使用未加密的私钥！)")
+          textarea.form-control(rows="4", ng-model="qrCodeText", id="qrCodeText", ng-change="updateQRCode()", placeholder="QR 加密私钥定制区(要求长度在250字符内，切记不要使用未加密的私钥！)")
 
       .form-group.row
         label.col-lg-2(for="backTextB") B 区定制字符
@@ -76,7 +85,7 @@
       .form-group.row
         label.col-lg-2(for="infoComment") 订制说明
         .col-lg-10.controls
-          textarea.form-control(ng-model="infoComment", id="infoComment", placeholder="如果有需要补充的说明内容请在此输入。")
+          textarea.form-control(rows="5", ng-model="infoComment", id="infoComment", placeholder="如果有需要补充的说明内容请在此输入。")
 
 .col-xs-12.col-sm-12.col-md-12
   legend 输出结果
@@ -92,7 +101,7 @@
     p 收件人电话: {{ infoPhone }}
     p 订制说明: {{ infoComment }}
     h4 定制信息
-    p QR码私钥定制字符: {{ qrCodeText }}
     p A 区定制字符: {{ backTextA }}
     p B 区定制字符: {{ backTextB }}
     p C 区定制字符: {{ backTextC }}
+    p QR码私钥定制字符: {{ qrCodeText }}
