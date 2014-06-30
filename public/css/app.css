@@ -32,4 +32,32 @@ body {
   font-size: 28px;
 }
 
+#front-image  {
+  width: 200px;
+  height: 200px;
+  filter: gray;
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(1);
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  border: 1px solid #021a40;
+  border-radius: 100px;
+  margin-left: 20px;
+  margin-top: 50px;
+}
 
+#front-image img {
+  width: 50%;
+  height: auto;
+  padding-top: 40px;
+  padding-left: 10px;
+  transform:rotate(17deg);
+  -ms-transform:rotate(17deg); /* IE 9 */
+  -webkit-transform:rotate(17deg);
+}
+
+#front-text {
+  font-size: 30px;
+  font-style: italic;
+  padding-top: 10px;
+}

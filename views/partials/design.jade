@@ -1,17 +1,26 @@
 .col-xs-12.col-sm-12.col-md-12
-  .col-md-6.col-md-offset-4
-    #back-design.token-design
-      .text-center.token-hole
-        h1 〇
-      #back-text-a.text-center
-        p {{backTextA}}
-      #back-qr-code.text-center
-        p(ng-bind-html='qrCodeImg') {{ qrCodeImg }}
-      #back-text-b.text-center
-        p {{backTextB}}
-      #back-text-c.text-center
-        p {{backTextC}}
-
+  .row
+    .col-md-3.col-md-offset-1.col-sm-6
+      #back-design.token-design
+        .text-center.token-hole
+          h1 〇
+        #back-text-a.text-center
+          p {{backTextA}}
+        #back-qr-code.text-center
+          p(ng-bind-html='qrCodeImg') {{ qrCodeImg }}
+        #back-text-b.text-center
+          p {{backTextB}}
+        #back-text-c.text-center
+          p {{backTextC}}
+    .col-md-3.col-md-offset-2.col-sm-6
+      #back-design.token-design
+        .text-center.token-hole
+          h1 〇
+        #front-image.text-center
+          img(src='image/bitcoin.png')
+        #front-text.text-center
+          p Bitcoin
+ 
 .col-xs-12.col-sm-12.col-md-12
   form(role="form")
     fieldset
