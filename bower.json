@@ -8,8 +8,9 @@
   ],
   "dependencies": {
     "angular": "~1.2.14",
-    "angular-socket-io": "~0.3.0",
+    "angular-animate": "~1.2.0",
+    "angular-bootstrap": "~0.10.0",
     "angular-route": "~1.2.14",
-    "angular-bootstrap": "~0.10.0"
+    "angular-socket-io": "~0.3.0"
   }
 }
