@@ -3,6 +3,7 @@
 // Declare app level module which depends on filters, and services
 
 angular.module('myApp', [
+  'ngAnimate',
   'ngRoute',
 
   'myApp.controllers',
@@ -19,6 +20,10 @@ config(function ($routeProvider, $locationProvider) {
     when('/design', {
       templateUrl: 'partials/design',
       controller: 'DesignCtrl'
+    }).
+    when('/gallery', {
+      templateUrl: 'partials/gallery',
+      controller: 'GalleryCtrl'
     }).
     when('/about', {
       templateUrl: 'partials/about',

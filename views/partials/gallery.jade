@@ -1,0 +1,7 @@
+.container.slider
+  img.slide(ng-repeat='photo in photos', ng-swipe-right='showPrev()', ng-swipe-left='showNext()', ng-show='isActive($index)', ng-src='{{photo.src}}')
+  span.arrow.prev(href='#', ng-click='showPrev()') <
+  span.arrow.next(href='#', ng-click='showNext()') >
+  ul.nav
+    li(ng-repeat='photo in photos', ng-class='{\'active\':isActive($index)}')
+      img(src='{{photo.src}}', alt='{{photo.desc}}', title='{{photo.desc}}', ng-click='showPhoto($index);')
