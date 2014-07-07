@@ -32,12 +32,15 @@ angular.module('myApp.controllers', []).
   controller('GalleryCtrl', function ($scope, $sce) {
     // Set of Photos
     $scope.photos = [
-        {src: 'http://farm9.staticflickr.com/8042/7918423710_e6dd168d7c_b.jpg', desc: 'Image 01'},
-        {src: 'http://farm9.staticflickr.com/8449/7918424278_4835c85e7a_b.jpg', desc: 'Image 02'},
-        {src: 'http://farm9.staticflickr.com/8457/7918424412_bb641455c7_b.jpg', desc: 'Image 03'},
-        {src: 'http://farm9.staticflickr.com/8179/7918424842_c79f7e345c_b.jpg', desc: 'Image 04'},
-        {src: 'http://farm9.staticflickr.com/8315/7918425138_b739f0df53_b.jpg', desc: 'Image 05'},
-        {src: 'http://farm9.staticflickr.com/8461/7918425364_fe6753aa75_b.jpg', desc: 'Image 06'}
+        {src: '/image/1.jpg', desc: ''},
+        {src: '/image/2.jpg', desc: ''},
+        {src: '/image/3.jpg', desc: ''},
+        {src: '/image/4.jpg', desc: ''},
+        {src: '/image/design.jpg', desc: ''},
+        {src: '/image/detail.jpg', desc: ''},
+        {src: '/image/V.jpg', desc: ''},
+        {src: '/image/zbc.jpg', desc: ''},
+        {src: '/image/ptr.jpg', desc: ''}
     ];
 
     // initial image index
@@ -63,6 +66,10 @@ angular.module('myApp.controllers', []).
         $scope._Index = index;
     };
 
+    setInterval(function() {
+      var el = document.getElementById('btn-next');
+      angular.element(el).triggerHandler('click');
+    }, 7500);
   }).
   controller('AboutCtrl', function ($scope, $sce) {
     $scope.getDonateQRCode = function() {

@@ -66,34 +66,33 @@ body {
 .arrow {
     cursor: pointer;
     display: block;
-    height: 64px;
-    margin-top: -35px;
+    height: 120px;
+    margin-top: -100px;
     outline: medium none;
     position: absolute;
     top: 50%;
-    width: 64px;
-    font-size: 64px;
+    width: 120px;
+    font-size: 120px;
     z-index: 5;
 }
 .arrow.prev {
     left: 20px;
-    opacity: 0.2;
+    opacity: 0.03;
     transition: all 0.2s linear 0s;
 }
 .arrow.next {
-    opacity: 0.2;
-    right: 20px;
+    opacity: 0.03;
+    right: -20px;
     transition: all 0.2s linear 0s;
 }
 .arrow.prev:hover{
-    opacity:1;
+    opacity: 0.8;
 }
 .arrow.next:hover{
-    opacity:1;
+    opacity: 0.8;
 }
 
 .slider {
-    border: 5px solid #efefef;
     border-radius: 5px;
     height: 500px;
     margin: 20px auto;
@@ -113,13 +112,22 @@ body {
     transform-style: preserve-3d;
 }
 .slide {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
 }
 
+.slider img {
+    max-height: 100%;
+    max-width: 100%;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    border-radius: 10px;
+}
+ 
 .slider .nav {
-    bottom: -4px;
+    bottom: -40px;
     display: block;
     height: 48px;
     left: 0;
@@ -133,7 +141,7 @@ body {
 }
 
 .slider .nav li {
-    border: 5px solid #AAAAAA;
+    border: 3px solid #AAA;
     border-radius: 5px;
     cursor: pointer;
     display: inline-block;
@@ -143,10 +151,12 @@ body {
     width: 50px;
 }
 .slider .nav li.active {
-    border: 5px solid #FFFFFF;
+    border: 3px solid #DDD;
 }
 .slider .nav li img {
-    width: 100%;
+    height: 100%;
+    margin: auto;
+    border-radius: 1px;
 }
 
 .slide.ng-hide-add {
