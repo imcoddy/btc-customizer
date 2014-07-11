@@ -64,8 +64,8 @@
               input.form-control(ng-model="infoNum", id="infoNum", type="number", min="1", ng-change="updatePrice()")
             .col-xs-3
               span.input-group
-                span.input-group-addon mBTC
                 input.form-control(placeholder="0.00", readonly="readonly", type="text", ng-model="infoPrice")
+                span.input-group-addon mBTC
 
       .form-group.row
         label.col-lg-2(for="infoTransactionID") 交易 ID
@@ -73,9 +73,14 @@
           input.form-control(ng-model="infoTransactionID", id="infoTransactionID", placeholder="支付的交易 ID")
 
       .form-group.row
-        label.col-lg-2(for="infoPostAddress") 邮编地址
+        label.col-lg-2(for="infoPostAddress") 邮寄地址
         .col-lg-10.controls
-          input.form-control(ng-model="infoPostAddress", id="infoPostAddress", placeholder="xx 市 xxx 街 xxx 号 邮编 xxxxxx")
+          input.form-control(ng-model="infoPostAddress", id="infoPostAddress", placeholder="xx 市 xxx 街 xxx 号")
+
+      .form-group.row
+        label.col-lg-2(for="infoPostNumber") 邮政编码
+        .col-lg-10.controls
+          input.form-control(ng-model="infoPostNumber", id="infoPostNumber", placeholder="邮编 xxxxxx")
 
       .form-group.row
         label.col-lg-2(for="infoPhone") 联系电话
@@ -98,6 +103,7 @@
     p 交易ID: {{ infoTransactionID }}
     p 收件人: {{ infoContact }}
     p 收件地址: {{ infoPostAddress }}
+    p 邮政编码: {{ infoPostNumber }}
     p 收件人电话: {{ infoPhone }}
     p 订制说明: {{ infoComment }}
     h4 定制信息
