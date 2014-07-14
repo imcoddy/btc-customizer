@@ -29,6 +29,48 @@ angular.module('myApp.controllers', []).
     $scope.infoPrice = $scope.updatePrice();
     $scope.updateQRCode();
   }).
+  controller('GalleryCtrl', function ($scope, $sce) {
+    // Set of Photos
+    $scope.photos = [
+        {src: '/image/1.jpg', desc: ''},
+        {src: '/image/2.jpg', desc: ''},
+        {src: '/image/3.jpg', desc: ''},
+        {src: '/image/4.jpg', desc: ''},
+        {src: '/image/design.jpg', desc: ''},
+        {src: '/image/detail.jpg', desc: ''},
+        {src: '/image/V.jpg', desc: ''},
+        {src: '/image/zbc.jpg', desc: ''},
+        {src: '/image/ptr.jpg', desc: ''}
+    ];
+
+    // initial image index
+    $scope._Index = 0;
+
+    // if a current image is the same as requested image
+    $scope.isActive = function (index) {
+        return $scope._Index === index;
+    };
+
+    // show prev image
+    $scope.showPrev = function () {
+        $scope._Index = ($scope._Index > 0) ? --$scope._Index : $scope.photos.length - 1;
+    };
+
+    // show next image
+    $scope.showNext = function () {
+        $scope._Index = ($scope._Index < $scope.photos.length - 1) ? ++$scope._Index : 0;
+    };
+
+    // show a certain image
+    $scope.showPhoto = function (index) {
+        $scope._Index = index;
+    };
+
+    setInterval(function() {
+      var el = document.getElementById('btn-next');
+      angular.element(el).triggerHandler('click');
+    }, 7500);
+  }).
   controller('AboutCtrl', function ($scope, $sce) {
     $scope.getDonateQRCode = function() {
       var qrCode = qrcode(8, 'M');

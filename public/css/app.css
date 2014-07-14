@@ -61,3 +61,131 @@ body {
   font-style: italic;
   padding-top: 10px;
 }
+
+
+.arrow {
+    cursor: pointer;
+    display: block;
+    height: 120px;
+    margin-top: -100px;
+    outline: medium none;
+    position: absolute;
+    top: 50%;
+    width: 120px;
+    font-size: 120px;
+    z-index: 5;
+}
+.arrow.prev {
+    left: 20px;
+    opacity: 0.03;
+    transition: all 0.2s linear 0s;
+}
+.arrow.next {
+    opacity: 0.03;
+    right: -20px;
+    transition: all 0.2s linear 0s;
+}
+.arrow.prev:hover{
+    opacity: 0.8;
+}
+.arrow.next:hover{
+    opacity: 0.8;
+}
+
+.slider {
+    border-radius: 5px;
+    height: 500px;
+    margin: 20px auto;
+    position: relative;
+    width: 800px;
+
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    -ms-perspective: 1000px;
+    -o-perspective: 1000px;
+    perspective: 1000px;
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+.slide {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.slider img {
+    max-height: 100%;
+    max-width: 100%;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    border-radius: 10px;
+}
+ 
+.slider .nav {
+    bottom: -40px;
+    display: block;
+    height: 48px;
+    left: 0;
+    margin: 0 auto;
+    padding: 1em 0 0.8em;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    width: 100%;
+    z-index: 5;
+}
+
+.slider .nav li {
+    border: 3px solid #AAA;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    height: 30px;
+    margin: 0 8px;
+    position: relative;
+    width: 50px;
+}
+.slider .nav li.active {
+    border: 3px solid #DDD;
+}
+.slider .nav li img {
+    height: 100%;
+    margin: auto;
+    border-radius: 1px;
+}
+
+.slide.ng-hide-add {
+    opacity:1;
+
+    -webkit-transition:1s linear all;
+    -moz-transition:1s linear all;
+    -o-transition:1s linear all;
+    transition:1s linear all;
+
+    -webkit-transform-origin: right top 0;
+    -moz-transform-origin: right top 0;
+    -ms-transform-origin: right top 0;
+    -o-transform-origin: right top 0;
+    transform-origin: right top 0;
+}
+.slide.ng-hide-add.ng-hide-add-active {
+    opacity:0;
+}
+.slide.ng-hide-remove {
+    -webkit-transition:1s linear all;
+    -moz-transition:1s linear all;
+    -o-transition:1s linear all;
+    transition:1s linear all;
+
+    display:block!important;
+    opacity:0;
+}
+.slide, .slide.ng-hide-remove.ng-hide-remove-active {
+    opacity:1;
+}
+
